@@ -1,3 +1,3 @@
 # docker-dev
 
-Develop environment inside docker container.
+A template for VSCode develop environment inside docker container.

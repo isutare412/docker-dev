@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  erlang-dev:
+  devcon:
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,4 +11,5 @@ services:
         - PASSWD=dev
         - UID=1000
         - GID=1000
-    hostname: erlang-dev
+    hostname: devcon
+    network_mode: "host"

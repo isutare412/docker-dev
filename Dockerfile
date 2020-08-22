@@ -44,8 +44,11 @@ RUN if [ "${USER:-nouser}" != "nouser" ] && \
     usermod -aG sudo ${USER}; \
   fi
 
+# Set prompt color
+ENV TERM=xterm-256color
+
 ##########################################################################
-# Source code copy
+# Source code
 ##########################################################################
 
 WORKDIR /workspace
