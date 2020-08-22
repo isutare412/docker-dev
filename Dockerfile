@@ -15,6 +15,7 @@ ARG APT_INSTALL="apt-get install -y --no-install-recommends"
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive ${APT_INSTALL} \
         sudo \
+        git \
         vim \
         tree \
         && \
