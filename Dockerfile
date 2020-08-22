@@ -29,12 +29,14 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 # User arguments
 ARG USER
 ARG GROUP
+ARG PASSWD
 ARG UID
 ARG GID
-ARG PASSWD
 
 # Add an user if given
-RUN if [ "${USER:-nouser}" != "nouser" ]; then \
+RUN if [ "${USER:-nouser}" != "nouser" ] && \
+        [ "${GROUP:-nogroup}" != "nogroup" ] && \
+        [ "${PASSWD:-nopasswd}" != "nopasswd" ]; then \
     groupadd -g ${GID} ${GROUP} && \
     useradd -u ${UID} -g ${GID} -m -s /bin/bash ${USER} && \
     echo "${USER}:${PASSWD}" | chpasswd && \
