@@ -5,11 +5,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        - USER=dev
-        - GROUP=dev
-        - PASSWD=dev
-        - UID=1000
-        - GID=1000
     hostname: devcon
     network_mode: "host"
