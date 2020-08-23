@@ -6,4 +6,3 @@ services:
       context: .
       dockerfile: Dockerfile
     hostname: devcon
-    network_mode: "host"
